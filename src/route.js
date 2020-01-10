@@ -1,13 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import SongSession from './components/SongSession';
+import { NavBar, ArtistDisplay, SongDisplay } from './components';
+import { Container } from '@material-ui/core';
 
 const Routing = () => {
 	return (
 		<BrowserRouter>
-			<Route path="/songs/:id" exact>
-				<SongSession />
-			</Route>
+			<NavBar />
+			<Container style={{display: "flex", justifyContent: "center"}}>
+				<Route path="/songs/:id" exact>
+					<SongDisplay />
+				</Route>
+				<Route path="/artists/:id" exact>
+					<ArtistDisplay />
+				</Route>
+			</Container>
 		</BrowserRouter>
 	);
 }

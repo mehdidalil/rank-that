@@ -1,6 +1,6 @@
 import React from 'react';
 import { VoteSlider } from '../ui';
-import { Typography, Chip } from '@material-ui/core';
+import { Chip } from '@material-ui/core';
 
 const SongAspect = (props) => {
     return (
