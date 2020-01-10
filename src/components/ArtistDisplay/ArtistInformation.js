@@ -1,11 +1,14 @@
 import React from 'react';
-import { Box, Card, CardHeader, Avatar, Typography } from '@material-ui/core';
+import { Box, Card, CardHeader, Avatar, Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
 	box: {
 		display: "flex",
-		justifyContent: "center"
+		justifyContent: "center",
+		width: "50%",
+		margin: "0 auto",
+		marginBottom: "2em"
 	},
 	large: {
         width: theme.spacing(20),
@@ -18,16 +21,28 @@ const ArtistInformation = (props) => {
 	const classes = useStyles();
 	return (
 		<Box className={classes.box}>
-			<Avatar
-				className={classes.large}
-				aria-label="recipe"
-				primary
-				src={props.artist.pic}
-			/>
-			<Typography component="h5" variant="h5">
-				{}
-			</Typography>
+			<Grid container direction="column" alignContent="center" alignItems="center" spacing={2}>
+				<Grid item xs>
+					<Avatar
+						className={classes.large}
+						aria-label="recipe"
+						primary
+						src={props.artist.pic}
+					/>
+				</Grid>
+				<Grid item xs>
+					<Typography component="h5" variant="h5">
+						{props.artist.name}
+					</Typography>
+				</Grid>
+				<Grid item xs style={{textAlign: "center"}}>
+					<Typography component="h6" variant="subtitle1">
+						{props.artist.bio}
+					</Typography>
+				</Grid>
+			</Grid>
 		</Box>
+		
 		
 	);
 }

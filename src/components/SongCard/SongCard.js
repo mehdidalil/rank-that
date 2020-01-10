@@ -16,7 +16,6 @@ import SongHeader from './SongHeader';
 const useStyles = makeStyles(theme => ({
     card: {
         width: "40em",
-        marginTop: "2em",
         position: "fixed"
     },
     media: {
