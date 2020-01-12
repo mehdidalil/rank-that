@@ -16,7 +16,6 @@ import SongHeader from './SongHeader';
 const useStyles = makeStyles(theme => ({
     card: {
         width: "40em",
-        position: "fixed"
     },
     media: {
         marginTop: "10px",
@@ -43,7 +42,7 @@ const SongCard = (props) => {
     const classes = useStyles();
     return (
         <Card className={classes.card}>
-            <SongHeader song={props.song} />
+            <SongHeader song={props.song} album={props.album}/>
             <CardMedia className={classes.media}>
                 <Container>
                     <SongMedia youtubeId={props.song.youtubeId} />
@@ -55,7 +54,12 @@ const SongCard = (props) => {
                 </Box>
             </CardContent>
             <CardActions className={classes.action}>
-			<Button className={classes.button} variant="contained" color="primary" onClick={props.onClick}>
+			<Button
+                className={classes.button}
+                variant="contained"
+                color="primary"
+                onClick={props.onClick}
+            >
                 Vote
             </Button>
 		</CardActions>

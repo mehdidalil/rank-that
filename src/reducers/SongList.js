@@ -1,99 +1,99 @@
 const SongListReducer = () => {
     return ([
         {
+            id: 0,
             title: "Alright",
-            album: "To Pimp A Butterfly",
-            artist: "Kendrick Lamar",
+            artistId: 0,
+            albumId: 0,
             youtubeId: "Z-48u_uWMHY",
-            pic: `${process.env.PUBLIC_URL}/resources/kendrick.jpg`,
             grade: 9
         },
         {
+            id: 1,
             title: "Humble",
-            album: "DAMN",
-            artist: "Kendrick Lamar",
+            artistId: 0,
+            albumId: 1,
             youtubeId: "tvTRZJ-4EyI",
-            pic: `${process.env.PUBLIC_URL}/resources/kendrick.jpg`,
             grade: 6
         },
         {
+            id: 2,
             title: "DNA",
-            album: "DAMN",
-            artist: "Kendrick Lamar",
+            artistId: 0,
+            albumId: 1,
             youtubeId: "NLZRYQMLDW4",
-            pic: `${process.env.PUBLIC_URL}/resources/kendrick.jpg`,
             grade: 7
         },
         {
+            id: 3,
             title: "MAAD City",
-            album: "Good Kid Maad City",
-            artist: "Kendrick Lamar",
+            artistId: 0,
+            albumId: 2,
             youtubeId: "10yrPDf92hY",
-            pic: `${process.env.PUBLIC_URL}/resources/kendrick.jpg`,
             grade: 5
         },
         {
+            id: 4,
             title: "God's Plan",
-            album: "Scorpion",
-            artist: "Drake",
+            artistId: 1,
+            albumId: 6,
             youtubeId: "xpVfcZ0ZcFM",
-            pic: `${process.env.PUBLIC_URL}/resources/drake.jpg`,
             grade: 8
         },
         {
+            id: 5,
             title: "Nice for What",
-            album: "Scorpion",
-            artist: "Drake",
+            artistId: 1,
+            albumId: 6,
             youtubeId: "U9BwWKXjVaI",
-            pic: `${process.env.PUBLIC_URL}/resources/drake.jpg`,
             grade: 8
         },
         {
+            id: 6,
             title: "Too Good",
-            album: "Views",
-            artist: "Drake",
+            artistId: 1,
+            albumId: 5,
             youtubeId: "ZBz12OQJT_Q",
-            pic: `${process.env.PUBLIC_URL}/resources/drake.jpg`,
             grade: 8
         },
         {
+            id: 7,
             title: "Hotline Bling",
-            album: "Views",
-            artist: "Drake",
+            artistId: 1,
+            albumId: 5,
             youtubeId: "uxpDa-c-4Mc",
-            pic: `${process.env.PUBLIC_URL}/resources/drake.jpg`,
             grade: 8
         },
         {
+            id: 8,
             title: "Angel",
-            album: "Out of My Mind",
-            artist: "Pharrell Williams",
+            artistId: 2,
+            albumId: 4,
             youtubeId: "VoICSpU546E",
-            pic: `${process.env.PUBLIC_URL}/resources/pharrell.jpg`,
             grade: 6
         },
         {
+            id: 9,
             title: "That Girl",
-            album: "Out of My Mind",
-            artist: "Pharrell Williams",
+            artistId: 2,
+            albumId: 4,
             youtubeId: "ANSBN4KpOOk",
-            pic: `${process.env.PUBLIC_URL}/resources/pharrell.jpg`,
             grade: 10
         },
         {
+            id: 10,
             title: "Frontin'",
-            album: "Frontin'",
-            artist: "Pharrell Williams",
+            artistId: 2,
+            albumId: 3,
             youtubeId: "LOtkH5amC7s",
-            pic: `${process.env.PUBLIC_URL}/resources/pharrell.jpg`,
             grade: 10
         },
         {
+            id: 11,
             title: "Really Like You",
-            album: "Out of My Mind",
-            artist: "Pharrell Williams",
+            artistId: 2,
+            albumId: 4,
             youtubeId: "r7R1DcComl4",
-            pic: `${process.env.PUBLIC_URL}/resources/pharrell.jpg`,
             grade: 10
         },
     ])

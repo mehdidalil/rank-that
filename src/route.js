@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { NavBar, ArtistDisplay, SongDisplay } from './components';
+import { NavBar, SongView, ArtistView } from './components';
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
@@ -19,10 +19,10 @@ const Routing = () => {
 			<NavBar />
 			<Container className={classes.container}>
 				<Route path="/songs/:id" exact>
-					<SongDisplay />
+					<SongView />
 				</Route>
 				<Route path="/artists/:id" exact>
-					<ArtistDisplay />
+					<ArtistView />
 				</Route>
 			</Container>
 		</BrowserRouter>

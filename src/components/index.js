@@ -1,4 +1,5 @@
-export { default as SongCard } from './SongCard';
 export { default as NavBar } from './NavBar';
-export { default as ArtistDisplay } from './ArtistDisplay';
-export { default as SongDisplay } from './SongDisplay';
+export * from './ui/';
+export * from './song/';
+export * from './artist/';
+export * from './views/';

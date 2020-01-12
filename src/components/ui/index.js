@@ -1,2 +1,1 @@
-import VoteSlider from './VoteSlider';
-export { VoteSlider };
+export { default as VoteSlider } from './VoteSlider';

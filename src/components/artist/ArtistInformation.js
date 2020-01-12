@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Card, CardHeader, Avatar, Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
 	box: {
@@ -14,7 +15,10 @@ const useStyles = makeStyles(theme => ({
         width: theme.spacing(20),
         height: theme.spacing(20),
         fontSize: theme.spacing(5),
-    },
+	},
+	item: {
+		textAlign: "center"
+	}
 }))
 
 const ArtistInformation = (props) => {
@@ -30,12 +34,12 @@ const ArtistInformation = (props) => {
 						src={props.artist.pic}
 					/>
 				</Grid>
-				<Grid item xs>
-					<Typography component="h5" variant="h5">
+				<Grid item xs className={classes.item}>
+					<Typography component="h4" variant="h4">
 						{props.artist.name}
 					</Typography>
 				</Grid>
-				<Grid item xs style={{textAlign: "center"}}>
+				<Grid item xs className={classes.item}>
 					<Typography component="h6" variant="subtitle1">
 						{props.artist.bio}
 					</Typography>
