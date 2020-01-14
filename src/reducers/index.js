@@ -7,4 +7,4 @@ export default combineReducers({
     songs: SongListReducer,
     artists: ArtistListReducer,
     albums: AlbumListReducer,
-})
+});

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { NavBar, SongView, ArtistView } from './components';
+import { ArtistListView, Menu } from './components';
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
@@ -16,14 +16,9 @@ const Routing = () => {
 	const classes = useStyles();
 	return (
 		<BrowserRouter>
-			<NavBar />
+			<Menu />
 			<Container className={classes.container}>
-				<Route path="/songs/:id" exact>
-					<SongView />
-				</Route>
-				<Route path="/artists/:id" exact>
-					<ArtistView />
-				</Route>
+				<Route path="/artists/" component={ArtistListView} />
 			</Container>
 		</BrowserRouter>
 	);

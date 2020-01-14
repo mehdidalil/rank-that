@@ -1,13 +1,14 @@
 import React from 'react';
-import { Box, Card, CardHeader, Avatar, Typography, Grid } from '@material-ui/core';
+import { Box, Avatar, Typography, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { connect } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
 	box: {
 		display: "flex",
 		justifyContent: "center",
-		width: "50%",
+		width: "100%",
 		margin: "0 auto",
 		marginBottom: "2em"
 	},
@@ -23,6 +24,7 @@ const useStyles = makeStyles(theme => ({
 
 const ArtistInformation = (props) => {
 	const classes = useStyles();
+	const artist = props.artists.find(artist => artist.id === parseInt(props.id));
 	return (
 		<Box className={classes.box}>
 			<Grid container direction="column" alignContent="center" alignItems="center" spacing={2}>
@@ -30,18 +32,20 @@ const ArtistInformation = (props) => {
 					<Avatar
 						className={classes.large}
 						aria-label="recipe"
-						primary
-						src={props.artist.pic}
+						primary="true"
+						src={artist.pic}
+						component={ RouterLink }
+						to={`/artists/${props.id}`}
 					/>
 				</Grid>
 				<Grid item xs className={classes.item}>
 					<Typography component="h4" variant="h4">
-						{props.artist.name}
+						{artist.name}
 					</Typography>
 				</Grid>
 				<Grid item xs className={classes.item}>
 					<Typography component="h6" variant="subtitle1">
-						{props.artist.bio}
+						{artist.bio}
 					</Typography>
 				</Grid>
 			</Grid>
@@ -51,4 +55,10 @@ const ArtistInformation = (props) => {
 	);
 }
 
-export default ArtistInformation;
+const mapStateToProps = (state) => {
+	return ({
+		artists: state.artists
+	})
+};
+
+export default connect(mapStateToProps)(ArtistInformation);

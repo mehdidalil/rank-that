@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     Card,
@@ -8,6 +8,7 @@ import {
     Container,
     CardActions,
     Button,
+    Collapse,
 } from '@material-ui/core';
 import SongForm from './SongForm';
 import SongMedia from './SongMedia';
@@ -15,7 +16,7 @@ import SongHeader from './SongHeader';
 
 const useStyles = makeStyles(theme => ({
     card: {
-        width: "40em",
+        width: "100%",
     },
     media: {
         marginTop: "10px",
@@ -39,30 +40,48 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SongCard = (props) => {
+    const ref = createRef();
     const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => {
+        setOpen(!open);
+    }
+    const handleScroll = () => {
+        const save = ref.current;
+        window.setTimeout(() => {
+            save.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                });
+        }, 300);
+        
+        console.log(save);
+    };
     return (
-        <Card className={classes.card}>
-            <SongHeader song={props.song} album={props.album}/>
-            <CardMedia className={classes.media}>
-                <Container>
-                    <SongMedia youtubeId={props.song.youtubeId} />
-                </Container>
-            </CardMedia>
-            <CardContent className={classes.content}>
-                <Box className={classes.songform}>
-                    <SongForm />
-                </Box>
-            </CardContent>
-            <CardActions className={classes.action}>
-			<Button
-                className={classes.button}
-                variant="contained"
-                color="primary"
-                onClick={props.onClick}
-            >
-                Vote
-            </Button>
-		</CardActions>
+        <Card className={classes.card} ref={ref}>
+            <SongHeader id={props.id} action={handleOpen} scroll={handleScroll} />
+            <Collapse in={open} timeout="auto">
+                <CardMedia className={classes.media}>
+                    <Container>
+                        <SongMedia id={props.id} />
+                    </Container>
+                </CardMedia>
+                <CardContent className={classes.content}>
+                    <Box className={classes.songform}>
+                        <SongForm id={props.id}/>
+                    </Box>
+                </CardContent>
+                <CardActions className={classes.action}>
+                    <Button
+                        className={classes.button}
+                        variant="contained"
+                        color="primary"
+                        onClick={props.onClick}
+                    >
+                        Vote
+                    </Button>
+                </CardActions>
+            </Collapse>
         </Card>
     );
 };
