@@ -62,9 +62,9 @@ const SongCard = (props) => {
                 <SongHeader id={props.id} action={handleOpen} scroll={handleScroll} />
                 <Collapse in={open} timeout="auto">
                     <CardMedia className={classes.media}>
-                        <Container>
+                        {/*<Container>
                             <SongMedia id={props.id} />
-                        </Container>
+                        </Container>*/}
                     </CardMedia>
                     <CardContent className={classes.content}>
                         <Box className={classes.songform}>

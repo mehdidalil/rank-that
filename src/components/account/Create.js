@@ -9,16 +9,16 @@ const inputs = [
 	},
 	{
 		id: "username",
-		label: "username",
+		label: "Username",
 	},
 	{
 		id: "password",
-		label: "password",
+		label: "Password",
 		type: "password"
 	},
 	{
 		id: "passwordConfirm",
-		label: "confirm password",
+		label: "Confirm Password",
 		type: "password"
 	}
 ];

@@ -11,9 +11,9 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
-const ArtistSongList = (props) => {
+const SongList = (props) => {
 	const classes = useStyles();
-	const songs = props.songs.filter(song => song.artistId === parseInt(props.id));
+	const songs = props.ids ? props.songs.filter(song => props.ids.includes(song.id)) : props.songs;
 	return (
 		<Grid container spacing={3}>
 			{
@@ -35,4 +35,4 @@ const mapStateToProps = state => {
 	})
 };
 
-export default connect(mapStateToProps)(ArtistSongList);
+export default connect(mapStateToProps)(SongList);

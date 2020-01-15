@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { ArtistInformation } from '../artist';
-import ArtistSongList from '../artist/ArtistSongList';
+import { SongList } from '../song';
 
 const useStyles = makeStyles(theme => ({
 	container: {
@@ -17,11 +17,12 @@ const useStyles = makeStyles(theme => ({
 const ArtistView = (props) => {
 	const { artistId } = useParams();
 	const classes = useStyles();
+	const ids = props.songs.filter(song => song.artistId === parseInt(artistId)).map(({ id }) => id);
 	return (
 		<div>
 			<ArtistInformation id={artistId} />
 			<Container className={classes.container}>
-				<ArtistSongList id={artistId} />
+				<SongList ids={ids} />
 			</Container>
 		</div>
 	);

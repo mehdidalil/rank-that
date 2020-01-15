@@ -27,7 +27,7 @@ const NavBar = () => {
 				<Button color="primary" variant="contained" component={RouterLink} to="/artists/">
 					Artists
 				</Button>
-				<Button color="primary" variant="contained">
+				<Button color="primary" variant="contained" component={RouterLink} to="/songs/">
 					Songs
 				</Button>
 				<Search />

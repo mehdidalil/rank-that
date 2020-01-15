@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { fade, InputBase, useMediaQuery } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
+import { useInputState } from '../hooks';
+import { initInputs, submitForm } from '../account/utils';
 
 const useStyles = makeStyles(theme => ({
 	search: {
@@ -43,20 +45,30 @@ const useStyles = makeStyles(theme => ({
 
 const Search = () => {
 	const classes = useStyles();
-
+	const inputHandler = useInputState(initInputs([{id: "search"}]));
+	const handleEnterPress = (evt) => {
+		if (evt.which === 13)
+			submitForm(inputHandler);
+	}
 	return (
 		<div className={classes.search}>
 			<div className={classes.searchIcon}>
 				<SearchIcon />
 			</div>
 			<InputBase
+				id="search"
 				placeholder="Search…"
+				autoComplete='off'
 				classes={{
 					root: classes.inputRoot,
 					input: classes.inputInput,
 					}}
-	 
-				inputProps={{ 'aria-label': 'search' }}
+				inputProps={{
+					'aria-label': 'search',
+					'value': inputHandler.content['search'].value,
+					'onChange': inputHandler.bind.onChange,
+					'onKeyPress': handleEnterPress,
+				}}
 			/>
 		</div>
 	);

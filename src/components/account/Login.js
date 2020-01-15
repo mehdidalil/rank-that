@@ -9,7 +9,7 @@ const inputs = [
 	},
 	{
 		id: "password",
-		label: "password",
+		label: "Password",
 		type: "password"
 	}
 ];
