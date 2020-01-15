@@ -3,3 +3,4 @@ export * from './song/';
 export * from './artist/';
 export * from './views/';
 export * from './menu/';
+export * from './account/';

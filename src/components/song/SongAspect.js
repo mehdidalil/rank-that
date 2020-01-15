@@ -8,8 +8,6 @@ const SongAspect = (props) => {
             <Chip label={props.aspect} />
             <VoteSlider
               defaultValue={5}
-              aria-labelledby="continuous-slider"
-              aria-label="vote slider"
               step={1}
               marks={props.marks}
               min={0}

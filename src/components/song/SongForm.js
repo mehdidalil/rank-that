@@ -22,7 +22,8 @@ const SongCardForm = () => {
           <SongAspect aspect="Flow" marks={marks}/>
           <SongAspect aspect="Lyrics" marks={marks}/>
           <SongAspect aspect="Originality" marks={marks}/>
-          <SongAspect aspect="Music" marks={marks}/>
+          <SongAspect aspect="Beat" marks={marks}/>
+          <SongAspect aspect="Beat" marks={marks}/>
         </div>
     );
 }

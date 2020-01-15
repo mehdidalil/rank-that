@@ -1,14 +1,15 @@
 import React from 'react';
-import { useMediaQuery } from '@material-ui/core';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import NavBar from './NavBar';
-import TopBar from './TopBar';
+import MobileBar from './MobileBar';
 
 const Menu = (props) => {
-	const md = useMediaQuery('(min-width: 768px)');
+	const theme = useTheme();
+	const md = useMediaQuery('@media(min-width: 768px)');
 
 	if (!md) {
 		return (
-			<TopBar />
+			<MobileBar />
 		);
 	} else {
 		return (
